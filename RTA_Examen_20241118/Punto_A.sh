@@ -23,7 +23,7 @@ echo "Limpiando la particion"
 
 sudo wipefs -a /dev/${PDISCO_1G}1
 
-PDISCO_2G=$(lsblk | grep 1G | head -n 1 | awk '{print $1}')
+PDISCO_2G=$(lsblk | grep 2G | head -n 1 | awk '{print $1}')
 
 sudo fdisk /dev/$PDISCO_2G << EOF
 n
