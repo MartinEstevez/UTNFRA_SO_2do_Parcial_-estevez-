@@ -19,7 +19,7 @@ EOF
 
 echo "Creamos la imagen"
 
-docker build -t martinestevez/web1-estevez:latest .
+docker build -t martinestevez/web2-estevez:latest .
 
 echo "pusheamos la imagen"
 
@@ -40,7 +40,7 @@ docker tag web2-estevez martinestevez/web2:latest
 echo "Creando el archivo run.sh"
 cat << EOF > run.sh
 #!/bin/bash
-docker run -d -p 8081:80 martinestevez/web2-estevez:latest
+docker run -d -p 8080:80 martinestevez/web2-estevez:latest
 EOF
 
 sudo chmod 777 run.sh
