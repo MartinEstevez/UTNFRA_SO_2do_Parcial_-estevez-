@@ -19,12 +19,6 @@ Nombre: {{ nombre }}
 Apellido: {{ apellido }}
 Division: {{ division }}
 
-touch datos_equipo.j2
-vim datos_equipo.j2
-IP: {{ ip }}
-Distribución: {{ distro }}
-Cantidad de Cores: {{ cores }}
-
 vim /home/martinestevez/repogit/UTN-FRA_SO_Examenes/202406/ansible/roles/2do_parcial/tasks
 
 - name: Generar archivo para alumno
