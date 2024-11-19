@@ -2,12 +2,17 @@
 
 cd /usr/local/bin
 
+#CREACION DEL SCRIPT Y PERMISOS
+
 sudo touch EstevezAltaUser-Groups.sh
 
 sudo chmod 777 EstevezAltaUser-Groups.sh
 
+#PARAMETRO 1: USUARIO DEL CUAL SE OBTENDRA LA CLAVE
 
 USER_REF=$1
+
+#PARAMETRO 2: /home/martinestevez/repogit/UTN-FRA_SO_Examenes/202406/bash_script/Lista_Usuarios.txt
 
 LISTA_USUARIOS=$2
 
