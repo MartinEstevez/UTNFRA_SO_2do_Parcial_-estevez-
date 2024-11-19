@@ -1,5 +1,5 @@
 #!/bin/bash
-PATH_DOCKER="/$HOME/UTNFRA_SO_2do_Parcial_estevez/202406/docker"
+PATH_DOCKER="/home/martinestevez/repogit/UTN-FRA_SO_Examenes/202406/docker"
 cd $PATH_DOCKER
 
 cat > index.html << EOF
@@ -12,7 +12,7 @@ cat > index.html << EOF
 EOF
 
 echo "Creamos dockerfile"
-cat <<EOF > dockerfile
+cat << EOF > dockerfile
 FROM nginx:latest
 COPY index.html /usr/share/nginx/html/index.html
 EOF
@@ -23,12 +23,28 @@ docker build -t martinestevez/web1-estevez:latest .
 
 echo "pusheamos la imagen"
 
-docker push martinestevez/web1-estevez:latest
+docker push martinestevez/web2-estevez:latest
 
 docker images
 
+# se agrega el usuario al grupo docker
+
+sudo usermod -aG docker martinestevez
+
+# INICIAR SESION
+
+sudo docker login -u martinestevez
+
+docker tag web2-estevez martinestevez/web2:latest
+
+echo "Creando el archivo run.sh"
+cat << EOF > run.sh
+#!/bin/bash
+docker run -d -p 8081:80 martinestevez/web2-estevez:latest
+EOF
+
 sudo chmod 777 run.sh
-./run.sh
+sudo ./run.sh
 
 echo "Testeamos"
 
