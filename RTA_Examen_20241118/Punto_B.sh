@@ -23,9 +23,9 @@ USUARIO_2=$(grep Prog2 $LISTA_USUARIOS | awk -F ',' '{print $1}')
 USUARIO_3=$(grep Test1 $LISTA_USUARIOS | awk -F ',' '{print $1}')
 USUARIO_4=$(grep Supervisor $LISTA_USUARIOS | awk -F ',' '{print $1}')
 
-GRUPO_PROG=$(grep Prog1 $LISTA_USUARIOS | awk -F ',' '{print $2"}')
-GRUPO_TESTERS=$(grep Test1 $LISTA_USUARIOS | awk -F ',' '{print $2"}')
-GRUPO_SUPERVISORES=$(grep Supervisor $LISTA_USUARIOS | awk -F ',' '{print $2"}')
+GRUPO_PROG=$(grep Prog1 $LISTA_USUARIOS | awk -F ',' '{print $2}')
+GRUPO_TESTERS=$(grep Test1 $LISTA_USUARIOS | awk -F ',' '{print $2}')
+GRUPO_SUPERVISORES=$(grep Supervisor $LISTA_USUARIOS | awk -F ',' '{print $2}')
 
 RUTA_USER1=$(grep Prog1 $LISTA_USUARIOS | awk -F ',' '{print $3}')
 RUTA_USER2=$(grep Prog2 $LISTA_USUARIOS | awk -F ',' '{print $3}')
